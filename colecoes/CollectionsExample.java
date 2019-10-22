@@ -11,7 +11,9 @@ public class CollectionsExample {
 		
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		Set<Pessoa> pessoasSemRepeticao = new HashSet<Pessoa>();
-		
+		Queue<String> filaPessoas = new LinkedList<String>();
+			
+			
 		
 		/*Operações Com ArrayList*/
 		pessoas.add(pessoa1);
@@ -64,7 +66,18 @@ public class CollectionsExample {
 		
 		System.out.println("A soma das idades das pessoas presentes no HashSet é: "+ idades);
 
+		
+		/*Operações com fila*/
+		filaPessoas.add(pessoa1.getNome());
+		filaPessoas.add(pessoa2.getNome());
+		filaPessoas.add(pessoa3.getNome());
+		
+		System.out.println("Fila de pessoas :" + filaPessoas);
+		
+		String primeiroRemovido = filaPessoas.remove();
+		System.out.println("Removendo : "+ primeiroRemovido +" Fila de pessoas após a remoção :" + filaPessoas);
 
+		
 		
 				
 
