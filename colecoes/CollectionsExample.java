@@ -12,6 +12,7 @@ public class CollectionsExample {
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		Set<Pessoa> pessoasSemRepeticao = new HashSet<Pessoa>();
 		Queue<String> filaPessoas = new LinkedList<String>();
+		Map<String,Integer> mapaPessoas = new HashMap<String,Integer>();
 			
 			
 		
@@ -72,14 +73,30 @@ public class CollectionsExample {
 		filaPessoas.add(pessoa2.getNome());
 		filaPessoas.add(pessoa3.getNome());
 		
+		System.out.println("--- Fila --");
+		
 		System.out.println("Fila de pessoas :" + filaPessoas);
 		
-		String primeiroRemovido = filaPessoas.remove();
-		System.out.println("Removendo : "+ primeiroRemovido +" Fila de pessoas após a remoção :" + filaPessoas);
+		System.out.println("Cabeça da fila: "+ filaPessoas.peek()); 
+		
+		String primeiroRemovido = filaPessoas.poll();
+		System.out.println("Removendo: "+ primeiroRemovido +" Fila de pessoas após a remoção: " + filaPessoas);
 
 		
+		/*Operações com mapa*/
+		mapaPessoas.put(pessoa1.getNome(), pessoa1.getIdade());
+		mapaPessoas.put(pessoa2.getNome(), pessoa2.getIdade());
+		mapaPessoas.put(pessoa3.getNome(), pessoa3.getIdade());
 		
-				
+		System.out.println("--- Hash Map --");
+		
+		System.out.println("Mapa de pessoas e suas idades " + mapaPessoas);
+		String nomeASerBuscado = "Ricardo";
+		System.out.println("O a idade de "+ nomeASerBuscado + " é: " + mapaPessoas.get(nomeASerBuscado));
+		
+		mapaPessoas.remove(nomeASerBuscado);
+		System.out.println("Removendo: "+ nomeASerBuscado+ " Mapa após a remoção: "+ mapaPessoas);
+		
 
 
 	}
